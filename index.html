@@ -7,9 +7,9 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 ---
 {% if site.paginate %}
 	{% for post in paginator.posts %}
-    <article class="notepad-index-post post row">
+    <article class="niatmulia-index-post post row">
         <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
+            <span class="niatmulia-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     <span class="day">
                         {{ post.date | date: "%d" }}
@@ -21,22 +21,22 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
             </span>
         </div>
         <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
+            <header class="niatmulia-post-header">
+                <h3 class="niatmulia-post-title">
                     <a href="{{ site.url }}{{ post.url }}">
                         {{ post.title }}
                     </a>
                 </h3>
             </header>
-            <section class="notepad-post-excerpt">
+            <section class="niatmulia-post-excerpt">
                 <p>{{ post.content | strip_html | truncatewords:40 }}</p>
             </section>
-            
-                <div class="notepad-index-post-tags">
+
+                <div class="niatmulia-index-post-tags">
                 {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
-                    
+
                 </div>
-            
+
         </div>
     </article>
 	{% endfor %}
@@ -51,9 +51,9 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
     <span class="newer-posts faded"><i class="fa fa-chevron-left"></i> Newer</span>
     {% endif %}
 
-    
+
     <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-    	{% if paginator.next_page %} 
+    	{% if paginator.next_page %}
         <a class="older-posts" href="{{ site.url }}/page{{ paginator.next_page }}/">Older <i class="fa fa-chevron-right"></i></a>
     	{% else %}
     	<span class="older-posts faded">Older <i class="fa fa-chevron-right"></i></span>
@@ -61,9 +61,9 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
 	</nav>
 {% else %}
 	{% for post in site.posts %}
-    <article class="notepad-index-post post row">
+    <article class="niatmulia-index-post post row">
         <div class="small-12 medium-3 large-2 columns datetime">
-            <span class="notepad-post-meta">
+            <span class="niatmulia-post-meta">
                 <time datetime="{{ post.date | date_to_xmlschema }}">
                     <span class="day">
                         {{ post.date | date: "%d" }}
@@ -75,23 +75,23 @@ tags: [Hossain, Mohd, Faysal, electrical, engineering, blog, university, pennsyl
             </span>
         </div>
         <div class="small-12 medium-9 large-10 columns">
-            <header class="notepad-post-header">
-                <h3 class="notepad-post-title">
+            <header class="niatmulia-post-header">
+                <h3 class="niatmulia-post-title">
                     <a href="{{ site.url }}{{ post.url }}">
                         {{ post.title }}
                     </a>
                 </h3>
             </header>
-            <section class="notepad-post-excerpt">
+            <section class="niatmulia-post-excerpt">
                 <p>{{ post.content | strip_html | truncatewords:100 }}</p>
             </section>
-            
-                <div class="notepad-index-post-tags">
+
+                <div class="niatmulia-index-post-tags">
                 {% for tag in post.categories %}<a href="{{ site.url }}/categories/index.html#{{ post.categories | cgi_encode }}" title="Other posts from the {{ tag | capitalize }} category">{{ tag | capitalize }}</a>{% unless forloop.last %}&nbsp;{% endunless %}{% endfor %}
-                    
+
                 </div>
-            
+
         </div>
     </article>
-	{% endfor %}  
+	{% endfor %}
 {% endif %}
